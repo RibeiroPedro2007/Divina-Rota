@@ -1,2 +1,2 @@
 # Divina-Rota
-Site feito para o projeto Divina Rota
+Site feito para o projeto Divina Rota. Em 2025
