@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #222;
+  color: #ffc56f;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+}
+
+.section {
+  background-color: #2a2a2a;
+  border: 2px solid #ffc56f;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.back-arrow {
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  margin-right: 12px;
+  transition: transform 0.2s;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
+h2 {
+  color: #ff7206;
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #ffc56f;
+  font-size: 0.95rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #ffc56f;
+  line-height: 1.4;
+  border: 2px solid #ffc56f;
+  padding: 5px;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #ff7206;
+  cursor: pointer;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.checkbox-label span {
+  position: relative;
+  top: -3px; /* ou -2px se quiser subir mais */
+}
+
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.checkbox-group {
+  margin-bottom: 10px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 1px;
+  font-size: 0.95rem;
+}
+
+button {
+  background-color: #ff7206;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #cc5c04;
+  transform: scale(1.05);
+}
+
+#segundaEtapa {
+  display: none;
+  margin-top: 30px;
+}
+
+#terceiraEtapa{
+  display: none;
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.subtitulo {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #ffc56f;
+}
+
+.destinos{
+    border: 2px solid #ffc56f;
+    padding: 5px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.datario {
+  display: flex;
+  gap: 16px; /* Espaçamento entre os campos */
+  align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo button{
+  margin-top: 30px;
+}
+
+/* Ajustando a largura dos campos de data e horário */
+input[type="date"],
+input[type="time"] {
+width: 180px; /* Definindo uma largura menor */
+padding: 5px 10px; /* Ajustando o padding para ficar mais compacto */
+font-size: 1rem; /* Ajustando o tamanho da fonte */
+border: 1px solid #ffc56f; /* Cor da borda */
+border-radius: 5px; /* Bordas arredondadas */
+background-color: rgb(34, 34, 34); /* Cor de fundo escura para combinar */
+color: white; /* Cor do texto */
+}
+
+input[type="number"] {
+  width: 260px; /* Definindo uma largura menor */
+  padding: 5px 10px; /* Ajustando o padding para ficar mais compacto */
+  font-size: 1rem; /* Ajustando o tamanho da fonte */
+  border: 1px solid #ffc56f; /* Cor da borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: rgb(34, 34, 34); /* Cor de fundo escura para combinar */
+  color: white; /* Cor do texto */
+  }
+
+/* Para o ícone ficar branco, como a gente falou antes */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+filter: invert(1);
+cursor: pointer;
+}
+
+/* Estilo para as caixas de seleção e seus textos */
+.checkbox-label {
+display: flex;
+align-items: center;
+margin: 10px 0;
+font-size: 1rem;
+color: #ffc56f; /* Cor do texto */
+cursor: pointer;
+}
+
+.checkbox-label input[type="radio"] {
+margin-right: 10px; /* Espaço entre a caixa e o texto */
+width: 20px;
+height: 20px;
+border: 2px solid rgb(34, 34, 34);
+border-radius: 50%;
+background-color: #f2f2f2; /* Cor de fundo quando não selecionado */
+transition: background-color 0.3s, border-color 0.3s; /* Transição suave */
+}
+
+/* Quando o radio button é selecionado */
+.checkbox-label input[type="radio"]:checked {
+background-color: rgb(255, 114, 6); /* Cor laranja quando selecionado */
+border-color: rgb(255, 114, 6); /* Cor laranja na borda */
+}
+
+/* Quando o radio button não é selecionado */
+.checkbox-label input[type="radio"]:not(:checked) {
+background-color: #f2f2f2; /* Cor de fundo cinza claro quando não selecionado */
+border-color: rgb(34, 34, 34); /* Cor de borda cinza escuro */
+}
+
+/* Alinhamento das caixas de seleção e textos */
+.checkbox-label {
+display: flex;
+align-items: center;
+}
+
+.checkbox-input {
+margin-right: 10px;
+}
+
+.volta{  
+  background-color: #ff7206;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 50px;
+  margin-right: 10px;
+  user-select: none;
+  text-decoration: none;
+}
+
+.volta:hover {
+  background-color: #cc5c04;
+  transform: scale(1.05);
+}
+
+.section3 {
+  background-color: #2a2a2a;
+  border: 2px solid #ffc56f;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-conteudo {
+  background-color: #2a2a2a;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.fechar {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #000;
+}
+
+.restaurante-opcao {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #535353;
+  cursor: pointer;
+}
+.restaurante-opcao:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.pratos {
+  margin-top: 20px;
+  display: none;
+}
+
+.pf-item {
+  margin-bottom: 10px;
+}
+
+
+.restaurante-opcao input[type="radio"] {
+  margin-right: 10px; /* Espaço entre a caixa e o texto */
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(34, 34, 34);
+  border-radius: 50%;
+  background-color: #f2f2f2; /* Cor de fundo quando não selecionado */
+  transition: background-color 0.3s, border-color 0.3s; /* Transição suave */
+  }
+  
+  /* Quando o radio button é selecionado */
+  .restaurante-opcao input[type="radio"]:checked {
+  background-color: rgb(255, 114, 6); /* Cor laranja quando selecionado */
+  border-color: rgb(255, 114, 6); /* Cor laranja na borda */
+  }
+  
+  /* Quando o radio button não é selecionado */
+  .restaurante-opcao input[type="radio"]:not(:checked) {
+  background-color: #f2f2f2; /* Cor de fundo cinza claro quando não selecionado */
+  border-color: rgb(34, 34, 34); /* Cor de borda cinza escuro */
+  }
+
