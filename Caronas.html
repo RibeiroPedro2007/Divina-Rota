@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Css/carona.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="icon" type="image/x-icon" href="../imagens/carroicon.png">
+        <script src="../Js/conta.js" defer></script>
+    
+
+        <title>Divina Rota Caronas</title>
+</head>
+<body>
+    <body>
+        <nav class="Menu-bottom">
+
+            <div class="bottom-list">
+                <ul>
+                    <li class="bottom-item">
+                        <a class="bottom-linkItem" href="Home.html">
+                        <span class="icon"><i class="bi bi-house"></i></span>
+                        <span class="txt-link">Home</span>
+                        </a>
+                    </li>
+
+                </ul>   
+            </div>
+
+                <div class="bottom-list">
+                    <ul>
+                        <li class="bottom-item">
+                            <a class="bottom-linkItem" href="Personalize.html">
+                            <span class="icon"><i class="bi bi-arrow-repeat"></i></span> 
+                            <span class="txt-link">Personalize</span>
+                            </a>
+                        </li>
+                    </ul>   
+                </div>
+
+                <div class="bottom-list">
+                    <ul>
+                        <li class="bottom-item">
+                            <a class="bottom-linkItem" href="Pacotes.html">
+                            <span class="icon">  <i class="bi bi-piggy-bank"></i></span>
+                            <span class="txt-link">Pacotes</span>
+                            </a>
+                        </li>
+        
+                    </ul>   
+                </div>
+                
+
+
+            
+            <div class="bottom-list">
+                <ul>
+                    <li class="bottom-item">
+                        <a class="bottom-linkDaConta" onclick="toggleMenu()">
+                            <span class="icon"><i class="bi bi-person-circle"></i></span>
+                            <span class="txt-link">Conta</span> 
+                        </a>
+                    </li>
+                    
+                    <div class="account-menu" id="accountMenu">
+                        <ul>
+                            <li> <a class="bottom-perfil" id="link" onclick="abrirModal()">
+                                <span class="txt-link"><span class="icon"><i class="bi bi-person-fill-gear"></i></span> Perfil</span> 
+                                </a>
+                            </li>
+                            <li><a class="bottom-perfil" id="link2" onclick="abrirModal2()">
+                                <span class="txt-link"><span class="icon"><i class="bi bi-gear"></i></span> Configs</span> 
+                                </a></li>
+                            <li><a href="Site.html"><span class="icon"><i class="bi bi-door-open"></i></span>Log-out</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+
+       
+        <nav class="configs e perfil">
+            <!-- Fundo embaçado -->
+            <div id="fundo" class="fundo-embaçado" onclick="fecharModal()"></div>
+
+            <div id="modal" class="modal">
+                <br>
+                <h6>ﾠPerfil: </h6>
+                <br>
+                <div class="pad" >
+                <div id="perfil">
+                <h3>Usuário: <span id="nomeUsuario">Carregando...</span></h3>
+                <h3>Email: <span id="emailUsuario">Carregando...</span></h3>
+                </div>
+                <button class="fechar" onclick="fecharModal()">Fechar</button>
+                </div>
+            </div> 
+
+            <div id="fundo2" class="fundo-embaçado" onclick="fecharModal2()"></div>
+            <div id="modal2" class="modal">
+                <br>
+                <h6>Configurações:</h6>
+                <br>
+                <div class="pad" >
+                    <ul>
+                        <li> <a href="Login.html" class="bottom-perfil"><h3>
+                            <span class="txt-link"><span class="icon"><i class="bi bi-arrow-repeat"></i></span> Trocar de conta</span> 
+                            </h3></a>
+                        </li>
+                        <li> <a href="Site.html" class="bottom-perfil"><h3>
+                                <span class="txt-link"><span class="icon"><i class="bi bi-door-open"></i></span> Desconectar conta</span> 
+                                </h3></a>
+                        </li>
+                        <li> <a href="Site.html" class="bottom-perfil"><h3>
+                            <span class="txt-link"><span class="icon"><i class="bi bi-person-fill-x"></i></span> Excluir conta</span> 
+                            </h3></a>
+                        </li>
+                    </ul>
+                    <button class="fechar" onclick="fecharModal2()">Fechar</button>
+                </div>
+            </div>
+        </nav>
+        <main>
+          <aside>
+            <div class="inicial">
+                <h4>Divina RotaﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠCaronas</h4>
+                <h3>We move you with propouse</h3>
+                <br>
+            </div>
+
+            <div class="cont">
+            <h2>Caronas:</h2>
+            <h3>Encontre pessoas com o mesmo destino que o seu!</h3>
+            <br>
+            </div>
+
+
+            <div class="cont2">
+                <div class="tinder-container" id="tinder">
+                    <div class="carona-card">
+                        <img src="../imagens/joao.png" alt="Carona 1">
+                        <h3>João - Centro → CDHU</h3>
+                        <p>Horário: 08:00</p>
+                        <p>Carro: Lancer preto</p>
+                        <div class="buttons">
+                            <button onclick="deslizar('left')">Pular</button>
+                            <button class="abrirModal3" nome="João" horario="08:00h" preco="R$ 25,00">Aceitar</button>
+                        </div>
+                    </div>
+                
+                    <div class="carona-card">
+                        <img src="../imagens/ana.png" alt="Carona 2">
+                        <h3>Ana - Vila Carmen → Faculdade CN</h3>
+                        <p>Horário: 17:30</p>
+                        <p>Carro: Kwid Prata</p>
+                        <div class="buttons">
+                            <button onclick="deslizar('left')">Pular</button>
+                            <button class="abrirModal3" nome="Ana" horario="17:30h" preco="R$ 10,00">Aceitar</button>
+                        </div>
+                    </div>
+                
+                    <div class="carona-card">
+                        <img src="../imagens/Carlos.png" alt="Carona 3">
+                        <h3>Carlos - Embaú → Margem esquerda</h3>
+                        <p>Horário: 20:00</p>
+                        <p>Carro: Hb20 branco</p>
+                        <div class="buttons">
+                            <button onclick="deslizar('left')">Pular</button>
+                            <button class="abrirModal3" nome="Carlos" horario="20:00h" preco="R$ 15,00">Aceitar</button>
+                        </div>
+                    </div>
+                        <div class="carona-card">
+                            <img src="../imagens/maria.png" alt="Carona 1">
+                            <h3>Maria - Cruzeiro → Jadim da fonte</h3>
+                            <p>Horário: 12:45</p>
+                            <p>Carro: Corolla Vinho</p>
+                            <div class="buttons">
+                                <button onclick="deslizar('left')">Pular</button>
+                                <button class="abrirModal3" nome="Maria" horario="12:45h" preco="R$ 45,00">Aceitar</button>
+                            </div>
+                        </div>
+                </div>                
+        </div>
+            
+        </aside>
+         <!-- Modal -->
+         <div id="modal3" class="modal3 hidden">
+            <div class="modal3-content">
+               <span class="close3">&times;</span>
+               <h3 id="modal3-title"></h3>
+               <p id="modal3-description"></p>
+               <h3 id="modal3-price"></h3>
+               <p id="modal3-horario"></p>
+               <div class="modal3-buttons">
+               <button class="buy3-button">Comprar</button>
+               <button class="close3-button">Fechar</button>
+               </div>
+           </div>
+       </div>
+       <div id="modal4" class="modal3 hidden">
+        <div class="modal3-content">
+            <h3 id="pacote-nome">Carona</h3>
+            <p class="price" id="modal3-price"></p>
+            <div class="qr-code">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=pagamento-fake-divina-rota" alt="QR Code Pix">
+              <p class="price">Escaneie o QR Code para pagar</p>
+            </div>
+           <div class="modal3-buttons">
+           <button class="buy3-button" onclick="alert('Simulação: redirecionando para pagamento com cartão...')">Pagar com cartão</button>
+           <button class="close3-button">Fechar</button>
+           </div>
+       </div>
+   </div>
+
+            <div class="inicial2">
+                <h4>Viaje Conosco!</h4>
+                <br>
+                <div class="icons">
+                <h3>ﾠcontate-nos:</h3>
+                <span class="icon2"><i class="bi bi-youtube"></i></span>
+                <span class="icon2"><i class="bi bi-instagram"></i></span>
+                <span class="icon2"><i class="bi bi-twitter-x"></i></span>
+                <br>
+                </div>
+                <p>&copy; 2025 Divina Rota. Todos os direitos reservados.</p>
+            </div>
+        </main>
+
+<script>
+    //deslizar
+        const container = document.getElementById('tinder');
+        function deslizar(direcao) {
+            const cards = container.getElementsByClassName('carona-card');
+            const card = cards[cards.length - 1];
+            if (!card) return;
+            card.style.transform = direcao === 'right' ? 'translateX(400px) rotate(20deg)' : 'translateX(-400px) rotate(-20deg)';
+            card.style.opacity = '0';
+            setTimeout(() => {
+                container.removeChild(card);
+            }, 300);
+        }
+
+    //abrir modal
+        const botoesAbrir = document.querySelectorAll('.abrirModal3');
+        const modal3 = document.getElementById('modal3');
+
+        botoesAbrir.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const nome = botao.getAttribute('nome') || 'Pacote Desconhecido';
+            const preco = botao.getAttribute('preco') || 'Valor não informado';
+            const horario = botao.getAttribute('horario') || 'Valor não informado';
+
+            document.getElementById('modal3-title').innerText = nome;
+            document.getElementById('modal3-description').innerText = 'Detalhes do pacote.';
+            document.getElementById('modal3-price').innerText = preco;
+            document.getElementById('modal3-horario').innerText = horario;
+
+            modal3.classList.remove('hidden');
+        });
+
+    // Fechar modal
+        document.querySelector('.close3').addEventListener('click', () => modal3.classList.add('hidden'));
+        document.querySelector('.close3-button').addEventListener('click', () => modal3.classList.add('hidden'));
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal3) {
+            modal3.classList.add('hidden');
+            }
+        });
+        });
+
+        const buyButton = document.querySelector('.buy3-button');
+        const modal4 = document.getElementById('modal4');
+
+            buyButton.addEventListener('click', () => {
+                modal3.classList.add('hidden');
+                modal4.classList.remove('hidden');
+            });
+
+            // Botões para fechar o modal4
+        const closeModal4Buttons = modal4.querySelectorAll('.close3, .close3-button');
+        closeModal4Buttons.forEach(btn => {
+            btn.addEventListener('click', () => modal4.classList.add('hidden'));
+        });
+
+        // Fecha modal4 ao clicar fora
+        window.addEventListener('click', (e) => {
+            if (e.target === modal4) {
+                modal4.classList.add('hidden');
+            }
+        });
+</script>
+
+</body>
+</html>
