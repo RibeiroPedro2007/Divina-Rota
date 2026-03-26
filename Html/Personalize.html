@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../Css/personalize.css">
+  <title>Divina Rota Personalize</title>
+  
+</head>
+<body>
+  <div class="wrapper">
+    <div class="section" id="primeiraEtapa">
+      <div class="header">
+        <a href="Home.html" class="back-arrow"><i class="bi bi-arrow-left"></i></a>
+        <h2>Personalizar Viagem - Etapa 1</h2>
+      </div>
+
+      <label for="origem">Origem</label>
+      <input type="text" id="origem" placeholder="Digite sua origem">
+      <label for="origem">Destino</label>
+      <input type="text" id="origem" placeholder="Digite seu destino">
+
+      <div class="datario">
+        <div class="campo">
+          <label for="data">Data</label>
+          <input type="date" id="data">
+        </div>
+        <div class="campo">
+          <label for="horario">Horário</label>
+          <input type="time" id="horario">
+        </div>
+      </div>
+      
+
+      <label>Tipo de Pacote</label>
+      <select id="tipoPacote" onchange="togglePersonalizado(this.value)">
+        <option value="fechado">Pacote Fechado</option>
+        <option value="personalizado">Personalizado</option>
+      </select>
+      <div id="rotasSelecionadasContainer" style="display: none;">
+        <label for="rotasSelecionadas">Rotas Selecionadas</label>
+        <select id="rotasSelecionadas">
+          <option value="" disabled selected multiple size="5">Selecione uma rota</option>
+        </select>
+      </div>
+      
+
+      <div id="destinosPersonalizados" class="hidden">
+        <div class="subtitulo">Destinos Personalizados</div>
+
+        <div class="destinos" id="rota1">
+        <label>Rota 1:</label>
+      <input type="text" id="origem" placeholder="Digite sua origem">
+      <input type="text" id="origem" placeholder="Digite seu destino">
+        <div class="datario">
+          <div class="campo">
+            <label for="data">Data</label>
+            <input type="date" id="data">
+          </div>
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <input type="time" id="horario">
+          </div>
+          <div class="campo">
+            <button id="usarRota1" onclick="usarRota('Rota 1')">Usar Rota</button>
+          </div>
+        </div>
+        </div>
+
+        <div class="destinos" id="rota2">
+        <label>Rota 2:</label>
+      <input type="text" id="origem" placeholder="Digite sua origem">
+      <input type="text" id="origem" placeholder="Digite seu destino">
+        <div class="datario">
+          <div class="campo">
+            <label for="data">Data</label>
+            <input type="date" id="data">
+          </div>
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <input type="time" id="horario">
+          </div>
+          <div class="campo">
+            <button id="usarRota2" onclick="usarRota('Rota 2')">Usar Rota</button>
+          </div>
+        </div>
+        </div>
+
+        <div class="destinos" id="rota3">
+        <label>Rota 3:</label>
+      <input type="text" id="origem" placeholder="Digite sua origem">
+      <input type="text" id="origem" placeholder="Digite seu destino">
+        <div class="datario">
+          <div class="campo">
+            <label for="data">Data</label>
+            <input type="date" id="data">
+          </div>
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <input type="time" id="horario">
+          </div>
+          <div class="campo">
+            <button id="usarRota3" onclick="usarRota('Rota 3')">Usar Rota</button>
+          </div>
+        </div>
+        </div>
+
+        <button id="adicionarRota">Adicionar mais uma rota (+R$20)</button>
+      </div>
+
+      <label>Você é trilheiro?</label>
+      <select id="trilheiro" onchange="verificaTrilheiro()">
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+      </select>
+
+      <button onclick="mostrarSegundaEtapa()">Próximo passo</button>
+      <button onclick="window.location.href='Home.html'">Cancelar</button>
+    </div>
+
+    <div class="section" id="segundaEtapa">
+      <div class="header">
+        <a href="Personalize.html" class="back-arrow"><i class="bi bi-arrow-left"></i></a>
+        <h2>Personalizar Viagem - Etapa 2</h2>
+      </div>
+
+      <label>Quantas pessoas?</label>
+      <input type="number" min="1" placeholder="Digite o número de pessoas">
+      <label for="rotasSelecionadas">Disponibilizar carona?</label>
+        <select id="rotasSelecionadas">
+          <option>Não</option>
+          <option>Carona de até 3 pessoas (3% de desconto)</option>
+          <option>Carona de 4 pessoas (5% de desconto)</option>
+          <option>Carona de 5 pessoas (10% de desconto)</option>
+        </select>
+        <button class="botao-abrir-modal" onclick="abrirModal()">Selecionar: Restaurantes Parceiros</button>
+        <div id="modalRestaurantes" class="modal">
+          <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h3>Escolha um restaurante parceiro:</h3>
+      
+            <div class="restaurante-opcao" onclick="mostrarPratos()">
+              <input type="radio" name="restaurante" value="Saúva Restaurante" id="restaurante1">
+              <strong>Saúva Restaurante</strong> <br>
+              Estr. do Mato Dentro, S/N, Cachoeira Paulista - SP
+            </div>
+            
+      
+            <div class="restaurante-opcao">
+              <input type="radio" name="restaurante" value="Restaurante do Renato" onchange="mostrarPratos()">
+              <strong>Restaurante do Renato</strong> <br>
+              Centro, Cachoeira Paulista - SP
+            </div>
+      
+            <div class="restaurante-opcao">
+              <input type="radio" name="restaurante" value="Restaurante do Ocilio" onchange="mostrarPratos()">
+              <strong>Restaurante do Ocilio</strong> <br>
+              Rod. dos Tropeiros, Silveiras - SP
+            </div>
+      
+            <div class="pratos" id="secaoPratos">
+              <h4>Selecione a quantidade dos PFs:</h4>
+      
+              <div class="pf-item">
+                <label for="rota-completa">PF da Rota Completa-(Arroz, feijão, frango grelhado, legumes na manteiga e batata frita):</label>
+                <input type="number" id="rota-completa" min="0" value="0">
+              </div>
+      
+              <div class="pf-item">
+                <label for="rota-bruto">PF da Rota Bruto-(Arroz, feijão, miolo de alcatra, batata frita e salada):</label>
+                <input type="number" id="rota-bruto" min="0" value="0">
+              </div>
+      
+              <div class="pf-item">
+                <label for="rota-vegana">PF Rota Vegana-(Arroz, feijão, tofu grelhado, berinjela à milanesa e salada):</label>
+                <input type="number" id="rota-vegana" min="0" value="0">
+              </div>
+      
+              <button class="confirmar" onclick="confirmarPedido()">Confirmar Pedido</button>
+            </div>
+          </div>
+        </div>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="guia">
+          <span>Motorista Guia</span>
+        </label>       
+        <label class="checkbox-label">
+        <input type="checkbox" id="prioritario" disabled>
+          <span>Prioritário (incluído para trilheiro)</span>
+        </label>
+
+      </div>
+      
+
+      <button onclick="mostrarTerceiraEtapa()">Finalizar</button>
+      <button onclick="window.location.href='Home.html'">Cancelar</button>
+    </div>
+
+    <div class="section3" id="terceiraEtapa">
+      <h2><a href="Personalize.html" class="back-arrow"><i class="bi bi-arrow-left"></i></a>
+      Pacote Personalizado</h2>
+      <br>
+      <p class="price" id="pacote-preco">R$ 0,00</p>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=pagamento-fake-divina-rota" alt="QR Code Pix">
+        <p class="price">Escaneie o QR Code para pagar</p>
+      </div>
+      <button class="back-button" onclick="alert('Simulação: redirecionando para pagamento com cartão...')">Pagar com cartão</button>
+      <br><br>
+      <a class="volta" href="Home.html">Voltar</a>
+    </div>
+    
+  </div>
+
+  <script>
+  function togglePersonalizado(valor) {
+    const destinos = document.getElementById('destinosPersonalizados');
+    const rotasContainer = document.getElementById('rotasSelecionadasContainer');
+    if (valor === 'personalizado') {
+      destinos.classList.remove('hidden');
+      rotasContainer.style.display = 'block';
+    } else {
+      destinos.classList.add('hidden');
+      rotasContainer.style.display = 'none';
+    }
+  }
+
+    function mostrarSegundaEtapa() {
+      document.getElementById('primeiraEtapa').style.display = 'none';
+      document.getElementById('segundaEtapa').style.display = 'block';
+      document.getElementById('terceiraEtapa').style.display = 'none';
+    }
+
+    function mostrarTerceiraEtapa() {
+      document.getElementById('primeiraEtapa').style.display = 'none';
+      document.getElementById('segundaEtapa').style.display = 'none';
+      document.getElementById('terceiraEtapa').style.display = 'block';
+    }
+
+    function verificaTrilheiro() {
+      const trilheiro = document.getElementById('trilheiro').value;
+      const prioritario = document.getElementById('prioritario');
+      if (trilheiro === 'sim') {
+        prioritario.checked = true;
+        prioritario.disabled = true;
+      } else {
+        prioritario.checked = false;
+        prioritario.disabled = false;
+      }
+    }
+
+    const selectPacote = document.getElementById('tipoPacote');
+    const novaOptionPacote = new Option(nomeRota, nomeRota);
+    selectPacote.add(novaOptionPacote);
+    selectPacote.value = nomeRota;
+
+    function usarRota(nomeRota) {
+  const selectRotas = document.getElementById('rotasSelecionadas');
+  
+  // Verifica se a rota já foi adicionada
+  const existe = Array.from(selectRotas.options).some(option => option.value === nomeRota);
+  
+  if (!existe) {
+    const novaOption = new Option(nomeRota, nomeRota);
+    selectRotas.add(novaOption);
+  }
+
+  // Seleciona a nova rota sem desmarcar as outras
+  Array.from(selectRotas.options).forEach(option => {
+    if (option.value === nomeRota) {
+      option.selected = true;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tipoPacote = document.getElementById('tipoPacote');
+  togglePersonalizado(tipoPacote.value);
+});
+
+function abrirModal() {
+      document.getElementById("modalRestaurantes").style.display = "block";
+    }
+
+    function fecharModal() {
+      document.getElementById("modalRestaurantes").style.display = "none";
+      document.getElementById("secaoPratos").style.display = "none";
+      // Desmarca restaurante selecionado
+      const radios = document.querySelectorAll('input[name="restaurante"]');
+      radios.forEach(radio => radio.checked = false);
+      // Zera os campos de quantidade
+      document.getElementById("rota-completa").value = 0;
+      document.getElementById("rota-bruto").value = 0;
+      document.getElementById("rota-vegana").value = 0;
+    }
+
+
+    function mostrarPratos() {
+      document.getElementById("secaoPratos").style.display = "block";
+    }
+
+    function confirmarPedido() {
+      const restaurante = document.querySelector('input[name="restaurante"]:checked');
+      const completa = document.getElementById("rota-completa").value;
+      const bruto = document.getElementById("rota-bruto").value;
+      const vegana = document.getElementById("rota-vegana").value;
+
+      if (!restaurante) {
+        alert("Selecione um restaurante.");
+        return;
+      }
+
+      alert(`Pedido para ${restaurante.value}:\n` +
+            `- Rota Completa: ${completa}\n` +
+            `- Rota Bruto: ${bruto}\n` +
+            `- Rota Vegana: ${vegana}`);
+      
+      fecharModal();
+    }
+
+    // Fecha se clicar fora
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalRestaurantes");
+      if (event.target === modal) {
+        fecharModal();
+      }
+    }
+
+  </script>
+</body>
+</html>

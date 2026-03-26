@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Css/home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="icon" type="image/x-icon" href="../imagens/carroicon.png">
+        <script src="../Js/conta.js" defer></script>
+    
+
+        <title>Divina Rota Home</title>
+    </head>
+    <body>
+
+        <nav class="Menu-bottom">
+
+                <div class="bottom-list">
+                    <ul>
+                        <li class="bottom-item">
+                            <a class="bottom-linkItem" href="Personalize.html">
+                            <span class="icon"><i class="bi bi-arrow-repeat"></i></span> 
+                            <span class="txt-link">Personalize</span>
+                            </a>
+                        </li>
+                    </ul>   
+                </div>
+
+                <div class="bottom-list">
+                    <ul>
+                        <li class="bottom-item">
+                            <a class="bottom-linkItem" href="Caronas.html">
+                            <span class="icon"><i class="bi bi-people"></i></span>
+                            <span class="txt-link">Caronas</span>
+                            </a>
+                        </li>
+        
+                    </ul>   
+                </div>
+
+                <div class="bottom-list">
+                    <ul>
+                        <li class="bottom-item">
+                            <a class="bottom-linkItem" href="Pacotes.html">
+                            <span class="icon">  <i class="bi bi-piggy-bank"></i></span>
+                            <span class="txt-link">Pacotes</span>
+                            </a>
+                        </li>
+        
+                    </ul>   
+                </div>
+                
+
+
+            
+            <div class="bottom-list">
+                <ul>
+                    <li class="bottom-item">
+                        <a class="bottom-linkDaConta" onclick="toggleMenu()">
+                            <span class="icon"><i class="bi bi-person-circle"></i></span>
+                            <span class="txt-link">Conta</span> 
+                        </a>
+                    </li>
+                    
+                    <div class="account-menu" id="accountMenu">
+                        <ul>
+                            <li> <a class="bottom-perfil" id="link" onclick="abrirModal()">
+                                <span class="txt-link"><span class="icon"><i class="bi bi-person-fill-gear"></i></span> Perfil</span> 
+                                </a>
+                            </li>
+                            <li><a class="bottom-perfil" id="link2" onclick="abrirModal2()">
+                                <span class="txt-link"><span class="icon"><i class="bi bi-gear"></i></span> Configs</span> 
+                                </a></li>
+                            <li><a href="Site.html"><span class="icon"><i class="bi bi-door-open"></i></span>Log-out</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+
+       
+        <nav class="configs e perfil">
+            <!-- Fundo embaçado -->
+            <div id="fundo" class="fundo-embaçado" onclick="fecharModal()"></div>
+
+            <div id="modal" class="modal">
+                <br>
+                <h6>ﾠPerfil: </h6>
+                <br>
+                <div class="pad" >
+                <div id="perfil">
+                <h3>Usuário: <span id="nomeUsuario">Carregando...</span></h3>
+                <h3>Email: <span id="emailUsuario">Carregando...</span></h3>
+                </div>
+                <button class="fechar" onclick="fecharModal()">Fechar</button>
+                </div>
+            </div> 
+
+            <div id="fundo2" class="fundo-embaçado" onclick="fecharModal2()"></div>
+            <div id="modal2" class="modal">
+                <br>
+                <h6>Configurações:</h6>
+                <br>
+                <div class="pad" >
+                    <ul>
+                        <li> <a href="Login.html" class="bottom-perfil"><h3>
+                            <span class="txt-link"><span class="icon"><i class="bi bi-arrow-repeat"></i></span> Trocar de conta</span> 
+                            </h3></a>
+                        </li>
+                        <li> <a href="Site.html" class="bottom-perfil"><h3>
+                                <span class="txt-link"><span class="icon"><i class="bi bi-door-open"></i></span> Desconectar conta</span> 
+                                </h3></a>
+                        </li>
+                        <li> <a href="Site.html" class="bottom-perfil"><h3>
+                            <span class="txt-link"><span class="icon"><i class="bi bi-person-fill-x"></i></span> Excluir conta</span> 
+                            </h3></a>
+                        </li>
+                    </ul>
+                    <button class="fechar" onclick="fecharModal2()">Fechar</button>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <aside>
+                <div class="inicial">
+                    <h4>Divina RotaﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠHome</h4>
+                    <h3>We move you with propouse</h3>
+                    <br>
+                </div>
+
+                <div class="cont">
+                    
+                    <h2>Home:</h2>     
+                    <h3>
+                        Destinos em destaque:
+                    </h3>
+                    <ul class="pods">
+
+                        <li class="pod">
+                            <div class="thumbex">
+                                <a href="https://www.google.com.br/maps/@-22.7376936,-45.1214007,13z?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    <img src="../imagens/mini_mapa_redimensionado.png" alt="Thumb 1">
+                                </a>
+                            </div>
+                            <h5>Exemplo de destino</h5>  
+                        </li>
+
+                        <li class="pod">
+                            <div class="thumbex">
+                                <a href="https://www.google.com.br/maps/@-22.7376936,-45.1214007,13z?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    <img src="../imagens/mini_mapa_redimensionado.png" alt="Thumb 1">
+                                </a>
+                            </div>
+                            <h5>Exemplo de destino 2</h5>  
+                        </li>
+
+                        <li class="pod">
+                            <div class="thumbex">
+                                <a href="https://www.google.com.br/maps/@-22.7376936,-45.1214007,13z?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    <img src="../imagens/mini_mapa_redimensionado.png" alt="Thumb 1">
+                                </a>
+                            </div>
+                            <h5>Exemplo de destino 3</h5>  
+                        </li>
+
+                        <li class="pod">
+                            <div class="thumbex">
+                                <a href="https://www.google.com.br/maps/@-22.7376936,-45.1214007,13z?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    <img src="../imagens/mini_mapa_redimensionado.png" alt="Thumb 1">
+                                </a>
+                            </div>
+                            <h5>Exemplo de destino 4</h5>  
+                        </li>
+
+                            
+                    </ul>
+                    <br><br>
+                </div>                           
+                <div class="cont">
+                    <h2>Sobre nós:</h2>
+                    <h3>A história da Divina Rota surge a partir da realidade enfrentada no município de Cachoeira Paulista -SP, cuja crescente demanda por mobilidade intramunicipal na cidade, especialmente voltada aos peregrinos que visitam a Canção Nova, encontra insuficiência de transporte público e com limitações na mobilidade urbana local. Logo, a Divina Rota vem para oferecer uma solução rápida, eficiente e segura, melhorando significativamente a experiência dos visitantes na cidade. Atualmente, mesmo ainda em período de estruturação final, o negócio projeta um retorno sobre os lucros otimista e estimulante, tanto para a sua entrada no mercado, quanto para sua futura expansão e crescimento. Além de obter um resultado satisfatório na pesquisa de mercado, demonstrando sinais claros de sua potencialidade e vantagem competitiva de usufruir do mercado do turismo religioso.</h3>
+                </div>
+            </aside>
+            <div class="inicial2">
+                <h4>Viaje Conosco!</h4>
+                <br>
+                <div class="icons">
+                <h3>ﾠcontate-nos:</h3>
+                <span class="icon2"><i class="bi bi-youtube"></i></span>
+                <span class="icon2"><i class="bi bi-instagram"></i></span>
+                <span class="icon2"><i class="bi bi-twitter-x"></i></span>
+                <br>
+                </div>
+                <p>&copy; 2025 Divina Rota. Todos os direitos reservados.</p>
+            </div>
+        </main>
+    </body>
+</html>
